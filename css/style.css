@@ -1,0 +1,129 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+html, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    /* LAYOUT GRID */
+    display: grid; /* tipo de display */
+    grid-template-columns: 1fr 1.5fr; /* quantidade de colunas e tamanho de cada */
+    grid-template-rows: 8vh 86vh 6vh; /* quantidade linhas e tamanho de cada */
+    grid-template-areas: "header header" "aside main" "footer footer";/* definição de posições de cada item */
+}
+
+.menu-hamburguer {
+    /*background-color: red;*/
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    z-index: 100;
+    left: 2rem;
+    top: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.menu-hamburguer.show-menu {
+    right: 18rem;
+}
+
+.line {
+    width: 100%;
+    height: .1rem;
+    background-color: #ffffff;
+    box-shadow: 0.1rem 0.1rem 1px #000000;
+}
+
+.container header {
+    background-color: #FF4F5A;
+    grid-area: header;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.sidebar {
+    width: 18rem;
+    height: 88vh;
+    background-color: #385A64;
+    position: fixed;
+    top: 0;
+    left: -20rem;
+    border-radius: 0 1rem 1rem 0;
+    transition: all 1s;
+}
+
+.sidebar.show-menu {
+    left: 0;
+}
+
+.menu {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu-item {
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.menu-link {
+    font-family: Alata, serif;
+    text-transform: none;
+    font-size: 2rem;
+    color: #ffffff;
+
+}
+
+.menu-link:hover {
+    font-size: 2.3rem;
+}
+
+.container aside {
+    grid-area: aside;
+    background-image: url(/assets/home.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    grid-area: main;
+    align-items: center;
+}
+
+.container main h1 {
+    text-align: center;
+    font-family: Alata, serif;
+    font-size: 7rem;
+    color: #000000;
+    position: relative;
+}
+
+.container footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    grid-area: footer;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.container footer p {
+    font-family: Alata, serif;
+    font-size: .8rem;
+    color: #ffffff;
+}
+
+
+
